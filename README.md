@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="./github-image/logo.png"/>
+    <img alt="logo" src="./github-images/logo.png"/>
 </p>
 
 </br>
@@ -11,7 +11,7 @@
 
 ## 📷 Preview
 <p align="center">
-    <img src="./github-image/readme.png" width="90%" alt="home"/>
+    <img src="./github-images/readme.png" width="90%" alt="home"/>
 </p>
 
 </br>
@@ -29,20 +29,18 @@
 
 ```bash
 # Abra um terminal e copie este repositório com o comando
-$ git clone https://github.com/carlos-mattos/podcastr.git
+$ git clone https://github.com/carlos-mattos/Wiki-StarWars.git
 # ou use a opção de download.
 
-# Entre na pasta podcastr
-$ cd podcastr
+# Entre na pasta Wiki-StarWars
+$ cd Wiki-StarWars
 
 # Instale as dependências
 $ npm install
 
-# Inicie a API
-$ npm run server
+# Inicie o React
+$ npm run start
 
-# Inicie o Next
-$ npm run dev
 ```
 </br>
 
