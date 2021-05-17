@@ -1,5 +1,7 @@
-import {ObjectWithId} from "@material-ui/data-grid";
+interface ObjectWithId {
+  id: number;
+}
 
-export interface GenericSchema extends ObjectWithId{
-    url:string
+export interface GenericSchema extends ObjectWithId {
+  url: string;
 }

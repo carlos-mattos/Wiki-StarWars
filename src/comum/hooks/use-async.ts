@@ -1,9 +1,9 @@
-import {DependencyList, useEffect, useState} from "react";
+import { DependencyList, useEffect, useState } from 'react';
 
 export interface AsyncReturnType<T> {
-    isLoading: boolean,
-    error: boolean,
-    result: T | undefined,
+  isLoading: boolean;
+  error: boolean;
+  result: T | undefined;
 }
 
 /**
@@ -12,25 +12,29 @@ export interface AsyncReturnType<T> {
  * @param asyncFn função que tem a operação assíncrona
  * @param deps Se alguma das dependências mudar, a operação assíncrona é executada novamente
  */
-export const useAsync = <T>(asyncFn: Promise<T>, deps: DependencyList): AsyncReturnType<T> => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(false);
-    const [result, setResult] = useState<T>();
-    useEffect(() => {
-        const fn = async () => {
-            setIsLoading(true);
-            setError(false);
-            try {
-                const informacoes = await asyncFn;
-                setIsLoading(false);
-                setResult(informacoes)
-            } catch (error) {
-                    setError(true);
-                    setIsLoading(false);
-            }
-        }
-        fn();
-    }, deps)
+export const useAsync = <T>(
+  asyncFn: Promise<T>,
+  deps: DependencyList
+): AsyncReturnType<T> => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [result, setResult] = useState<T>();
 
-    return {isLoading, result, error}
-}
+  useEffect(() => {
+    const fn = async () => {
+      setIsLoading(true);
+      setError(false);
+      try {
+        const informacoes = await asyncFn;
+        setIsLoading(false);
+        setResult(informacoes);
+      } catch (error) {
+        setError(true);
+        setIsLoading(false);
+      }
+    };
+    fn();
+  }, deps);
+
+  return { isLoading, result, error };
+};
